@@ -3,7 +3,7 @@ import axios from 'axios';
 import { Card, Button, Modal, Form, Row, Col, Pagination } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-const API_URL = 'http://localhost:5000';
+const API_URL = 'https://backend-for-mcq-battle.onrender.com';
 
 const EditQuiz = () => {
   const [games, setGames] = useState([]);
@@ -306,7 +306,7 @@ export default EditQuiz;
 // import { Card, Button, Modal, Form, Row, Col, Pagination } from 'react-bootstrap';
 // import 'bootstrap/dist/css/bootstrap.min.css';
 
-// const API_URL = 'http://localhost:5000';
+// const API_URL = 'https://backend-for-mcq-battle.onrender.com';
 
 // const EditQuiz = () => {
 //   const [games, setGames] = useState([]);

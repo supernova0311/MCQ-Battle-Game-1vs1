@@ -13,7 +13,7 @@ const QuizTopicCard = ({ topic, onStartQuiz }) => {
     const userEmail = localStorage.getItem('userEmail');
     const fetchData = async () => {
       try {
-        const response = await axios.get(`http://localhost:5000/dashboard/${userEmail}`);
+        const response = await axios.get(`https://backend-for-mcq-battle.onrender.com/dashboard/${userEmail}`);
         const data = response.data;
 
         // Check if the gameId exists in the games array
@@ -33,7 +33,7 @@ const QuizTopicCard = ({ topic, onStartQuiz }) => {
 
   const handleViewScore = async () => {
     try {
-      const response = await axios.get(`http://localhost:5000/game/${topic._id}`);
+      const response = await axios.get(`https://backend-for-mcq-battle.onrender.com/game/${topic._id}`);
       const filteredGames = response.data.filter(game => game._id === `${topic._id}`);
       setQuizDetails(filteredGames[0].mcqs);
       console.log(topic._id, filteredGames[0].mcqs);

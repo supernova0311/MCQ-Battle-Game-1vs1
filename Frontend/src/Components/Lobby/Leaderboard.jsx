@@ -4,7 +4,7 @@ import axios from 'axios';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../Style/leaderboard.css'; 
 
-const API_URL = 'http://localhost:5000'; // Replace with your actual API URL
+const API_URL = 'https://backend-for-mcq-battle.onrender.com'; // Replace with your actual API URL
 
 const calculateAccuracy = (correct, attempt) => (attempt === 0 ? 0 : (correct / attempt) * 100);
 

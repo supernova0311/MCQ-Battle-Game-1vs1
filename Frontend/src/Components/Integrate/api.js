@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_URL = 'http://localhost:5000'; // Adjust this URL if necessary
+const API_URL = 'https://backend-for-mcq-battle.onrender.com'; // Adjust this URL if necessary
 
 export const signup = async (username, email, password) => {
   try {

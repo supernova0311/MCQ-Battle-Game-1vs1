@@ -4,7 +4,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import ProfilePhoto from '../Images/profilei.png';
 import axios from 'axios';
 
-const API_URL = 'http://localhost:5000';
+const API_URL = 'https://backend-for-mcq-battle.onrender.com';
 
 const Review = () => {
   const [reviews, setReviews] = useState([]);

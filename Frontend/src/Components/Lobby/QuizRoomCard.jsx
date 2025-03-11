@@ -4,8 +4,8 @@ import { useNavigate, useParams } from 'react-router-dom';
 import axios from 'axios';
 import io from 'socket.io-client';
 
-const socket = io('http://localhost:5000');
-const API_URL = 'http://localhost:5000';
+const socket = io('https://backend-for-mcq-battle.onrender.com');
+const API_URL = 'https://backend-for-mcq-battle.onrender.com';
 
 const QuizRoomCard = () => {
   const [questions, setQuestions] = useState([]);
@@ -154,7 +154,7 @@ const QuizRoomCard = () => {
     const playerIndex = p1 === player1.username ? 0 : 1;
 
     try {
-      const response = await axios.put(`http://localhost:5000/roomFriendGame/${roomId}`, {
+      const response = await axios.put(`https://backend-for-mcq-battle.onrender.com/roomFriendGame/${roomId}`, {
         Finished : 1,
         removed : 0,
         playerIndex,
@@ -180,13 +180,13 @@ const QuizRoomCard = () => {
       if((ParticipatedData[0].correctAnswers > ParticipatedData[1].correctAnswers) || (ParticipatedData[0].correctAnswers === ParticipatedData[1].correctAnswers && ParticipatedData[0].totalTimeTaken < ParticipatedData[1].totalTimeTaken)){
           setWinner(player1.username);
           try{
-            await axios.put(`http://localhost:5000/accuracyRoom/incrementCounts/${player1Email}`, {
+            await axios.put(`https://backend-for-mcq-battle.onrender.com/accuracyRoom/incrementCounts/${player1Email}`, {
                 "type": "win",
                 "subject": subject,
                 "difficulty": difficulty
             });
     
-            await axios.put(`http://localhost:5000/accuracyRoom/incrementCounts/${player2Email}`, {
+            await axios.put(`https://backend-for-mcq-battle.onrender.com/accuracyRoom/incrementCounts/${player2Email}`, {
               "type": "loss"
             });
           }catch(err){
@@ -195,12 +195,12 @@ const QuizRoomCard = () => {
       }else {
           setWinner(player2.username);
           try{
-            await axios.put(`http://localhost:5000/accuracyRoom/incrementCounts/${player2Email}`, {
+            await axios.put(`https://backend-for-mcq-battle.onrender.com/accuracyRoom/incrementCounts/${player2Email}`, {
                 "type": "win",
                 "subject": subject,
                 "difficulty": difficulty
             });
-            await axios.put(`http://localhost:5000/accuracyRoom/incrementCounts/${player1Email}`, {
+            await axios.put(`https://backend-for-mcq-battle.onrender.com/accuracyRoom/incrementCounts/${player1Email}`, {
               "type": "loss"
             });
           }catch(err){
@@ -215,7 +215,7 @@ const QuizRoomCard = () => {
 
   const handleClose = async () => {
     setShowResults(false);
-      await axios.put(`http://localhost:5000/roomFriendGame/${roomId}`, {
+      await axios.put(`https://backend-for-mcq-battle.onrender.com/roomFriendGame/${roomId}`, {
         Finished : 0,
         removed : 1,
       });

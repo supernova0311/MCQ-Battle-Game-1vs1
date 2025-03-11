@@ -24,7 +24,7 @@ const Quiz = () => {
   useEffect(() => {
     const fetchQuestions = async () => {
       try {
-        const response = await axios.get(`http://localhost:5000/game/${_id}`);
+        const response = await axios.get(`https://backend-for-mcq-battle.onrender.com/game/${_id}`);
         const filteredGames = response.data.filter(game => game._id === `${_id}`);
         setLength(filteredGames[0].noOfQuestions);
         setSubject(filteredGames[0].subject);
@@ -115,7 +115,7 @@ const Quiz = () => {
     };
 
     try {
-      await axios.post('http://localhost:5000/dashboard', data);
+      await axios.post('https://backend-for-mcq-battle.onrender.com/dashboard', data);
       console.log("Dashboard updated successfully");
     } catch (error) {
       console.error('Error updating dashboard:', error);
@@ -139,10 +139,10 @@ const Quiz = () => {
     };
   
     try {
-      await axios.post('http://localhost:5000/accuracy', AccuracySubject);
+      await axios.post('https://backend-for-mcq-battle.onrender.com/accuracy', AccuracySubject);
       console.log("Subject Accuracy updated successfully");
   
-      await axios.post('http://localhost:5000/accuracy', AccuracyDifficulty);
+      await axios.post('https://backend-for-mcq-battle.onrender.com/accuracy', AccuracyDifficulty);
       console.log("Difficulty Accuracy updated successfully");
     } catch (error) {
       console.error('Error updating dashboard or accuracy:', error);

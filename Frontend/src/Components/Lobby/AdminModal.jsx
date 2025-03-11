@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Modal, Button, Form } from 'react-bootstrap';
 import axios from 'axios';
 
-const API_URL = 'http://localhost:5000';
+const API_URL = 'https://backend-for-mcq-battle.onrender.com';
 
 const AdminModal = ({ show, handleClose, handleAccess }) => {
   const [email, setEmail] = useState('');

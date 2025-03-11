@@ -25,7 +25,7 @@ ChartJS.register(
   Legend
 );
 
-const API_URL = 'http://localhost:5000';
+const API_URL = 'https://backend-for-mcq-battle.onrender.com';
 
 const Analyze = () => {
   const [dashboardRoom, setDashboardRoom] = useState(null);
@@ -74,7 +74,7 @@ const Analyze = () => {
     const fetchData = async () => {
       try {
         const email = localStorage.getItem('userEmail'); // Get email from local storage
-        const response = await axios.get(`http://localhost:5000/accuracy/${email}`);
+        const response = await axios.get(`https://backend-for-mcq-battle.onrender.com/accuracy/${email}`);
         const data = response.data;
 
         // Update subject-wise data
